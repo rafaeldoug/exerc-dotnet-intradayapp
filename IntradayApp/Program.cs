@@ -6,6 +6,7 @@ namespace intraday
     class Program
     {
         static GerenciadorDeOperacoes gerenciador = new GerenciadorDeOperacoes();
+
         static void Main(string[] args)
         {
 
@@ -15,7 +16,7 @@ namespace intraday
                 Console.Clear();
                 ExibirMenu();
                 opcao = int.Parse(Console.ReadLine());
-                Operacoes(opcao);
+                Menu(opcao);
 
             } while (opcao != 5);
 
@@ -23,7 +24,7 @@ namespace intraday
 
         }
 
-        static void Operacoes(int opcao)
+        static void Menu(int opcao)
         {
             switch (opcao)
             {
@@ -47,7 +48,7 @@ namespace intraday
             Console.Clear();
             Console.WriteLine(">>>> Mostrar Saldo <<<<");
             Console.WriteLine();
-            Console.WriteLine($"Saldo total: {gerenciador.ObterSaldoTotal().ToString("C")}");
+            Console.WriteLine($"Saldo total: {gerenciador.ObterSaldoTotal():C}");
             Console.ReadLine();
         }
 
@@ -71,7 +72,7 @@ namespace intraday
             Console.WriteLine(">>>> Listagem de Operações <<<<");
             gerenciador.MostrarTodasOperacoes();
             Console.WriteLine();
-            Console.WriteLine($" Saldo Total: {gerenciador.ObterSaldoTotal().ToString("C")}");
+            Console.WriteLine($" Saldo Total: {gerenciador.ObterSaldoTotal():C}");
             Console.ReadLine();
         }
 

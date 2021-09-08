@@ -24,6 +24,7 @@ namespace intraday
         {
             return operacoes;
         }
+
         public void MostrarTodasOperacoes()
         {
             if (operacoes.Count == 0)
@@ -34,6 +35,7 @@ namespace intraday
                 operacoes.ForEach(o => Console.WriteLine(o));
             }
         }
+
         public void MostrarOperacoesESaldoPorData(DateTime data)
         {
             List<Operacao> operacoesPorData = this.operacoes.FindAll(o => o.Data.ToShortDateString().Equals(data.ToShortDateString()));
@@ -45,14 +47,14 @@ namespace intraday
 
             foreach (var op in operacoesPorData)
             {
-                Console.WriteLine($" {op.Id, -3} | {op.Saldo.ToString("F"), 8}");
+                Console.WriteLine($" {op.Id, -3} | {op.Saldo:F, 8}");
             }
 
             double saldoDoDia = 0;
             operacoesPorData.ForEach(o => saldoDoDia += o.Saldo);
 
             Console.WriteLine("----------------");
-            Console.WriteLine($"\n Saldo do dia: {saldoDoDia.ToString("C")}");
+            Console.WriteLine($"\n Saldo do dia: {saldoDoDia:C}");
 
         }
 

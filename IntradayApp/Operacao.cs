@@ -21,7 +21,7 @@ namespace intraday
 
         public override string ToString()
         {
-            return $" Id: {Id, -3} | Resultado: {Saldo.ToString("F"), 8} | Data: {Data.Date:d}";
+            return $" Id: {Id, -3} | Resultado: {Saldo:F, 8} | Data: {Data.Date:d}";
         }
 
     }
