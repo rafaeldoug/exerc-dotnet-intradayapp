@@ -58,6 +58,7 @@ namespace intraday
             Console.WriteLine();
             Console.WriteLine("* Deixe em branco para pesquisar a data de hoje");
             Console.Write("Digite a data (dd/mm/aaaa): ");
+            Console.WriteLine();
             string dataInput = Console.ReadLine();
             DateTime data = dataInput.Length == 0 ? DateTime.Now : DateTime.Parse(dataInput);
             gerenciador.MostrarOperacoesESaldoPorData(data);

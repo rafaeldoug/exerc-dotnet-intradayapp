@@ -40,7 +40,7 @@ namespace intraday
 
             Console.WriteLine($"Data: {data.ToShortDateString()}");
             Console.WriteLine("----------------");
-            Console.WriteLine($" ID  | {"Saldo", 8}");
+            Console.WriteLine($" ID  | {"Resultado", 8}");
             Console.WriteLine("----------------");
 
             foreach (var op in operacoesPorData)
