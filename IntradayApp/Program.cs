@@ -56,8 +56,10 @@ namespace intraday
             Console.Clear();
             Console.WriteLine(">>>> Listagem de Operações Por Data <<<<");
             Console.WriteLine();
+            Console.WriteLine("* Deixe em branco para pesquisar a data de hoje");
             Console.Write("Digite a data (dd/mm/aaaa): ");
-            DateTime data = DateTime.Parse(Console.ReadLine());
+            string dataInput = Console.ReadLine();
+            DateTime data = dataInput.Length == 0 ? DateTime.Now : DateTime.Parse(dataInput);
             gerenciador.MostrarOperacoesESaldoPorData(data);
             Console.ReadLine();
         }
@@ -86,8 +88,10 @@ namespace intraday
             double saldo = double.Parse(Console.ReadLine());
 
             Console.WriteLine();
+            Console.WriteLine("* Deixe em branco para cadastrar a data de hoje");
             Console.Write("Digite a data (dd/mm/aaaa): ");
-            DateTime data = DateTime.Parse(Console.ReadLine());
+            string dataInput = Console.ReadLine();
+            DateTime data = dataInput.Length == 0 ? DateTime.Now : DateTime.Parse(dataInput);
 
             gerenciador.CadastrarOperacao(
                 new Operacao(id, data, saldo)
